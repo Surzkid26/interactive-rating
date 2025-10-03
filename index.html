@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rating Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="card" id="rating-stage">
+            <div class="star">
+                <img class="on" src="images/icon-star.svg" alt="">
+            </div>
+            <h2>How did we do?</h2>
+            <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve
+                our offering!</p>
+            <div class="ratings">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+            </div>
+            <button class="submit-btn" id="submit">SUBMIT</button>
+        </div>
+
+        <div class="card thank-you" id="thank-you-stage">
+            <img src="images/illustration-thank-you.svg" alt="">
+            <div class="selected" id="selected-rating">You selected 0 out of 5</div>
+            <h2>Thank you!</h2>
+            <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get
+                in touch!</p>
+        </div>
+
+        <script>
+            const ratingButtons = document.querySelectorAll(".ratings button");
+            const submitBtn = document.getElementById("submit");
+            const ratingState = document.getElementById("rating-stage");
+            const thankYouState = document.getElementById("thank-you-stage");
+            const selectedRating = document.getElementById("selected-rating");
+
+            let rating = 0;
+
+            ratingButtons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    ratingButtons.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    rating = btn.textContent;
+                });
+            });
+
+            submitBtn.addEventListener("click", () => {
+                if (rating > 0) {
+                    ratingState.style.display = "none";
+                    thankYouState.style.display = "block";
+                    selectedRating.textContent = `You selected ${rating} out of 5`;
+                } else {
+                    alert("Please select a rating before submitting.");
+                }
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,131 @@
+/* Base styles - Mobile first */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: #141519;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    background: #1e252f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    margin-bottom: 10px;
+    max-width: 100px;
+}
+
+.star {
+    background: #2a323d;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.on{
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 9px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.ratings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.ratings button {
+    background: #2a323d;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ratings button:hover,
+.ratings button.active {
+    background: orange;
+    color: #fff;
+}
+
+.submit-btn {
+    background: orange;
+    border: none;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #ff9933;
+}
+
+.thank-you {
+    display: none;
+}
+
+.selected {
+    background: #2a323d;
+    border-radius: 20px;
+    padding: 4px 10px;
+    color: orange;
+    font-size: 9px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Tablet (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .ratings button {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+
+/* Desktop (>1024px) */
+@media screen and (min-width: 1025px) {
+    .ratings button {
+        width: 40px;
+        height: 40px;
+    }
+}
